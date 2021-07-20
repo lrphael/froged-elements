@@ -29,7 +29,6 @@
 // Container code end
 
 body {
-  height: 100vh;
   margin: 0;
   display: grid;
   place-items: center;
@@ -84,6 +83,37 @@ span.white {
     transform: scale(2.5);
   }
 }
+
+// margin customs
+$margin-space: .25em;
+.mt-1 {
+  margin-top: $margin-space !important;
+}
+.mt-3 {
+  margin-top: $margin-space * 3 !important;
+}
+.mb-2 {
+  margin-bottom: $margin-space * 2 !important;
+}
+.mb-5 {
+  margin-bottom: $margin-space * 5 !important;
+}
+.mx-1 {
+  margin-right: $margin-space !important;
+  margin-left: $margin-space !important;
+}
+.mx-2 {
+  margin-right: $margin-space * 2 !important;
+  margin-left: $margin-space * 2 !important;
+}
+// margin customs end
+
+// text customs
+.text-center {
+  text-align: center !important;
+}
+// text customs end
+
 
 // grid system
 div[class^="col-"], .col {
