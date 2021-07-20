@@ -1,22 +1,41 @@
-<ui-card>
-  <ui-card-header>
-    <ui-card-title>Test Title</ui-card-title>
-    <ui-card-subtitle>Test Subtitle</ui-card-subtitle>
-  </ui-card-header>
-  <ui-card-content>
-    <p>
-      Phasellus vehicula nec diam vitae rhoncus. Quisque laoreet in risus sed
-      faucibus. Aliquam et odio rutrum, pulvinar erat non, vestibulum urna.
-      Vestibulum mollis luctus semper. Ut dictum magna vel ornare ullamcorper.
-      Ut vel felis a ante euismod egestas. Phasellus condimentum arcu metus, non
-      consequat diam finibus ut.
-    </p>
-  </ui-card-content>
-  <ui-card-actions>
-    <ui-button>Basic</ui-button>
-    <ui-button color="primary">Primary</ui-button>
-    <ui-button color="accent">Accent</ui-button>
-    <ui-button color="warn">Warn</ui-button>
-    <ui-button [disabled]="true">Disabled</ui-button>
-  </ui-card-actions>
-</ui-card>
+
+  <div class="row">
+    <div class="col">
+      <ui-card>
+        <ui-card-content>
+          <div class="row">
+            <div class="col-6" style="background-color: red;">One</div>
+            <div class="col-6" style="background-color: yellow;">Two</div>
+            <div class="col-3" style="background-color: green;">Three</div>
+            <div class="col-3" style="background-color: violet;">Four</div>
+            <div class="col-3" style="background-color: orange;">Five</div>
+            <div class="col-3" style="background-color: blue;">Six</div>
+          </div>
+        </ui-card-content>
+      </ui-card>
+    </div>
+    <div class="col">
+      <ui-card>
+        <ui-card-header>
+          <ui-card-title>Test Title</ui-card-title>
+          <ui-card-subtitle>Test Subtitle</ui-card-subtitle>
+        </ui-card-header>
+        <ui-card-content>
+          <p>
+            Phasellus vehicula nec diam vitae rhoncus. Quisque laoreet in risus sed
+            faucibus. Aliquam et odio rutrum, pulvinar erat non, vestibulum urna.
+            Vestibulum mollis luctus semper. Ut dictum magna vel ornare ullamcorper.
+            Ut vel felis a ante euismod egestas. Phasellus condimentum arcu metus, non
+            consequat diam finibus ut.
+          </p>
+        </ui-card-content>
+        <ui-card-actions>
+          <ui-button>Basic</ui-button>
+          <ui-button color="primary">Primary</ui-button>
+          <ui-button color="accent">Accent</ui-button>
+          <ui-button color="warn">Warn</ui-button>
+          <ui-button [disabled]="true">Disabled</ui-button>
+        </ui-card-actions>
+      </ui-card>
+    </div>
+</div>

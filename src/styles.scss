@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 // Container code
 .container {
@@ -57,7 +57,7 @@ button {
   line-height: 36px;
   padding: 0 16px;
   border-radius: 4px;
-  font-family: Roboto,Helvetica Neue,sans-serif;
+  font-family: Roboto, Helvetica Neue, sans-serif;
   font-size: 14px;
   font-weight: 500;
   margin: 4px;
@@ -84,3 +84,34 @@ span.white {
     transform: scale(2.5);
   }
 }
+
+// grid system
+div[class^="col-"], .col {
+  padding: 1rem 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+$columns: 12;
+
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    flex: 0 0 100% / $columns * $i;
+  }
+  .col-offset-#{$i} {
+    margin-left: 100% / $columns * $i;
+  }
+}
+// grid system end
