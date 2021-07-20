@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './views/home/home.component';
-import { UiRippleDirective } from './directives/ui-ripple.directive';
+
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    UiRippleDirective
+    HomeComponent
   ],
   imports: [
+    SharedModule
   ],
 })
 export class CoreModule { }
