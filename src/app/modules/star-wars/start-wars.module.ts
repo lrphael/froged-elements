@@ -4,6 +4,7 @@ import { StarWarsRoutingModule } from './star-wars-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
 import { CategoryListComponent } from './components/category-list/category-list.component';
+import { LeftSideMenuComponent } from "./components/left-side-menu/left-side-menu.component";
 
 import { StarWarsListComponent } from './views/star-wars-list/star-wars-list.component';
 import { CategoryPeopleComponent } from './views/category-people/category-people.component';
@@ -18,6 +19,7 @@ import { CategoryPlanetsComponent } from './views/category-planets/category-plan
     CategoryPlanetsComponent,
 
     CategoryListComponent,
+    LeftSideMenuComponent
   ],
   imports: [
     StarWarsRoutingModule,

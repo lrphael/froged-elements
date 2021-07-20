@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { UiRippleDirective } from './directives/ui-ripple.directive';
 import { UiButtonComponent } from './components/ui-button/ui-button.component';
@@ -22,10 +23,12 @@ import { UiCardSubtitleComponent } from './components/ui-card-subtitle/ui-card-s
     UiCardSubtitleComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
   exports: [
     CommonModule,
+    RouterModule,
     UiRippleDirective,
     UiButtonComponent,
     UiCardComponent,
