@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { UiRippleDirective } from './directives/ui-ripple.directive';
 import { UiButtonComponent } from './components/ui-button/ui-button.component';
+import { UiCardComponent } from './components/ui-card/ui-card.component';
 
 @NgModule({
   declarations: [
     UiRippleDirective,
-    UiButtonComponent
+    UiButtonComponent,
+    UiCardComponent
   ],
   imports: [
     CommonModule
@@ -15,7 +17,8 @@ import { UiButtonComponent } from './components/ui-button/ui-button.component';
   exports: [
     CommonModule,
     UiRippleDirective,
-    UiButtonComponent
+    UiButtonComponent,
+    UiCardComponent
   ]
 })
 export class SharedModule { }
