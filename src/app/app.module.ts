@@ -2,13 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { CoreModule } from "./core/core.module";
+import { CoreModule } from "./modules/core/core.module";
 
 import { AppComponent } from './app.component';
+import { StarWarsListComponent } from './modules/star-wars/views/star-wars-list/star-wars-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StarWarsListComponent
   ],
   imports: [
     BrowserModule,
