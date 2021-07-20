@@ -1,1 +1,6 @@
-<p>category-planets works!</p>
+<ng-container *ngIf="planets.length; else elseTemplate">
+  <category-list [list]="planets"></category-list>
+</ng-container>
+<ng-template #elseTemplate>
+  <h1>Error to get the planets. Please, contact the admin!</h1>
+</ng-template>

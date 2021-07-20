@@ -1,1 +1,6 @@
-<p>category-starships works!</p>
+<ng-container *ngIf="starShips.length; else elseTemplate">
+  <category-list [list]="starShips"></category-list>
+</ng-container>
+<ng-template #elseTemplate>
+  <h1>Error to get the star ships. Please, contact the admin!</h1>
+</ng-template>

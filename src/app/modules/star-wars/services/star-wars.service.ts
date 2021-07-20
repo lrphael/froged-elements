@@ -38,7 +38,7 @@ export class StarWarsService {
   }
 
   public getAllStarShips() {
-    return this.httpClient.get(`${this.environmentUrl}/people/`, this.getDefaultHeader());
+    return this.httpClient.get(`${this.environmentUrl}/starships/`, this.getDefaultHeader());
   }
 
   public getStarShipById(star_ship_id) {

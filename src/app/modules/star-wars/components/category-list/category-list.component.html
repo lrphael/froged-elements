@@ -1,16 +1,11 @@
-
 <div class="row">
-  <div class="mx-2 mb-2">
-    <ui-card>
-      <ui-card-content>
-        <div class="category-content">
-          <div class="row">
-            <div class="col">
-              <p>star-wars-list works!</p>
-            </div>
-          </div>
-        </div>
-      </ui-card-content>
-    </ui-card>
-  </div>
+  <ng-container *ngFor="let person of list[0]; let i = index">
+    <div class="mx-2 mb-2">
+      <ui-card>
+        <ui-card-content>
+          <span><strong>Name: </strong> {{ person.name }}</span>
+        </ui-card-content>
+      </ui-card>
+    </div>
+  </ng-container>
 </div>

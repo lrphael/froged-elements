@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StarWarsService } from '../../services/star-wars.service';
 
 @Component({
   selector: 'app-category-planets',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryPlanetsComponent implements OnInit {
 
-  constructor() { }
+  planets: Array<any> = [];
+
+  constructor(private swService: StarWarsService) { }
 
   ngOnInit(): void {
+    this.getAllPlanets();
+  }
+
+  getAllPlanets(): void {
+    const getPlanets = this.swService.getAllPlanets().subscribe((data:any) => {
+      this.planets.push(data.results);
+      getPlanets.unsubscribe();
+    }, error => {
+      getPlanets.unsubscribe();
+    })
   }
 
 }

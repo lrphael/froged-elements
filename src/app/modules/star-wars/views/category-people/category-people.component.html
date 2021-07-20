@@ -1,1 +1,7 @@
-<p>category-people works!</p>
+<ng-container *ngIf="people.length; else elseTemplate">
+  <category-list [list]="people"></category-list>
+</ng-container>
+<ng-template #elseTemplate>
+  <h1>Error to get the people. Please, contact the admin!</h1>
+</ng-template>
+

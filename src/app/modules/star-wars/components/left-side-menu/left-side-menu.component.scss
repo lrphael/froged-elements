@@ -48,3 +48,15 @@
 	color: #000;
 	font-size: 36px;
 }
+
+@media (max-width: 968px) {
+	#content {
+    margin-top: -7%;
+	}
+}
+
+@media (max-width: 768px) {
+	#content {
+    margin-top: -9%;
+	}
+}

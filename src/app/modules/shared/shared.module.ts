@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { UiRippleDirective } from './directives/ui-ripple.directive';
 import { UiButtonComponent } from './components/ui-button/ui-button.component';
@@ -25,10 +27,13 @@ import { UiCardSubtitleComponent } from './components/ui-card-subtitle/ui-card-s
   imports: [
     CommonModule,
     RouterModule,
+    HttpClientModule
   ],
   exports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
+
     UiRippleDirective,
     UiButtonComponent,
     UiCardComponent,
