@@ -1,6 +1,4 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
-// import { TouchGestureEventData } from "tns-core-modules/ui/gestures";
-// import { AnimationCurve } from "tns-core-modules/ui/enums";
 
 @Directive({
   selector: '[uiRipple]'
@@ -8,35 +6,49 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class UiRippleDirective {
 
   private element: ElementRef;
+  private buttonElement: HTMLButtonElement;
 
-  constructor(el: ElementRef) {
+  constructor(
+    private el: ElementRef
+  ) {
       this.element = el;
   }
 
-  @HostListener('click', ['$event'])
-  onClick($event): void {
+  @HostListener('mousedown', ['$event'])
+  onClickUp($event): void {
+    this.buttonElement = this.element.nativeElement;
+    if (this.buttonElement.classList[0] != 'btn-disabled') {
+      this.removeRipple();
       this.createRipple($event);
+    }
   }
 
-  createRipple(event) {
-    const button = this.element.nativeElement;
-
-    const circle = document.createElement("span");
-    const diameter = Math.max(button.clientWidth, button.clientHeight);
+  createRipple(event):void {
+    const diameter = Math.max(this.buttonElement.clientWidth, this.buttonElement.clientHeight);
     const radius = diameter / 2;
+    const circle = this.defineCircleStyle(event, radius, diameter);
 
+    circle.classList.add(this.buttonElement.classList[0] == 'btn-basic' ? 'dark' : 'white');
+    this.buttonElement.appendChild(circle);
+  }
+
+  defineCircleStyle(event, radius, diameter): HTMLSpanElement {
+    const circle = document.createElement("span");
     circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-    circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+    circle.style.left = `${event.clientX - this.buttonElement.offsetLeft - radius}px`;
+    circle.style.top = `${event.clientY - this.buttonElement.offsetTop - radius}px`;
     circle.classList.add("ripple");
+    return circle;
+  }
 
-    const ripple = button.getElementsByClassName("ripple")[0];
-
-    if (ripple) {
-      ripple.remove();
+  removeRipple(): void {
+    const rippleArray = document.getElementsByClassName("ripple") as HTMLCollection;
+    if (rippleArray) {
+      for (let i = 0; i < rippleArray.length; i++) {
+        const ripple = rippleArray[i] as HTMLElement;
+        ripple.remove();
+      }
     }
-
-    button.appendChild(circle);
   }
 
 }
